@@ -53,7 +53,6 @@ namespace Advent_of_code.Day3
                 result *= (ulong)SolutionPartOne(Layout, slopes[i, 0], slopes[i, 1]);
 
             };
-            
             return result;
         }
             

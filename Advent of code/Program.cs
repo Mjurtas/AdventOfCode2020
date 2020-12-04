@@ -23,6 +23,9 @@ namespace Advent_of_code
             Console.WriteLine("3rd December Pt.1    "+ day3.TreeCountPartOne + " trees were hit in the slope of 1 down and 3 right.");
             Console.WriteLine("3rd December Pt.2    "+ day3.TreeCountPartTwo + " trees were hit when multiplying all of the given slopes.");
             Console.WriteLine("------------------------------");
+            Day4.Day4 day4 = new Day4.Day4();
+            Console.WriteLine("4th December Pt.1    " + day4.NumberOfValidPassportsPartOne + " passports were valid according to the initial rules.");
+            Console.WriteLine("4th December Pt.2    " + day4.NumberOfValidPassportsPartTwo + " passports were valid according to the new rules in part two.");
         }
     }
 }
