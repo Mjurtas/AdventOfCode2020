@@ -22,7 +22,7 @@ namespace Advent_of_code.Day3
        
         private string[] ParseDataToStringArray()
         {
-            string data = File.ReadAllText("C:\\Users\\Marten\\source\\repos\\Advent of code\\Advent of code\\Day3\\slopelayout.txt");
+            string data = File.ReadAllText("C:\\Users\\marte\\source\\repos\\AdventOfCode2020\\Advent of code\\Day3\\slopelayout.txt");
             return data.Split(Environment.NewLine);
         }
 

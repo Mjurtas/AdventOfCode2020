@@ -26,6 +26,7 @@ namespace Advent_of_code
             Day4.Day4 day4 = new Day4.Day4();
             Console.WriteLine("4th December Pt.1    " + day4.NumberOfValidPassportsPartOne + " passports were valid according to the initial rules.");
             Console.WriteLine("4th December Pt.2    " + day4.NumberOfValidPassportsPartTwo + " passports were valid according to the new rules in part two.");
+            Day7.Day7 day7 = new Day7.Day7();
         }
     }
 }

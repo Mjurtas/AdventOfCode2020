@@ -27,7 +27,7 @@ namespace Advent_of_code.Day4
         }
         private string[] ParseDataToStringArray()
         {
-           string[] data = File.ReadAllLines("C:\\Users\\Marten\\source\\repos\\Advent of code\\Advent of code\\Day4\\data.txt");
+           string[] data = File.ReadAllLines("C:\\Users\\marte\\source\\repos\\AdventOfCode2020\\Advent of code\\Day4\\data.txt");
             return data;
         }
        

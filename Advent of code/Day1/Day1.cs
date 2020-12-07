@@ -18,8 +18,9 @@ namespace Advent_of_code.Day1
         }
 
         public int[] ParseStringToIntArr()
+           
         {
-            string stringOfNumbers = File.ReadAllText("C:\\Users\\Marten\\source\\repos\\Advent of code\\Advent of code\\Day1\\listofnumbers.txt");
+            string stringOfNumbers = File.ReadAllText("C:\\Users\\marte\\source\\repos\\AdventOfCode2020\\Advent of code\\Day1\\listofnumbers.txt");
             int[] array = Array.ConvertAll(stringOfNumbers.Split(','), int.Parse);
             return array;
         }
