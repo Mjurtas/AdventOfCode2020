@@ -72,11 +72,40 @@ namespace Advent_of_code.Day7
                     }
                 }
             }
-            
+
+            PartTwo(listOfBags);
 
             return containsShinyBags.Count;
 
         }
 
+        public ulong PartTwo(List<Bag> listOfBags)
+        {
+
+            Bag shinyBag = listOfBags.Find(x => x.BagColor == "shiny gold ");
+            List<Bag> endBags = listOfBags.FindAll(x => x.ContainInfo == " ");
+
+            for (int i = 0; i < listOfBags.Count; i++)
+            {
+                while(listOfBags[i].ContainInfo != " ")
+                {
+                    List<Bag> bagsToCheck = 
+                }
+            }
+
+            ulong counter = 0;
+            for (int i = 0; i < listOfBags.Count; i++)
+            {
+                for (int j = 0; j < listOfBags[i].CanContain.Count; j++)
+                {
+                    counter += ulong.Parse(listOfBags[i].CanContain[j][0]);
+
+                }
+
+            }
+
+            return counter;
+        }
+      
     }
 }
