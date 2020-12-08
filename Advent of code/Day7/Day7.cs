@@ -9,11 +9,14 @@ namespace Advent_of_code.Day7
 {
     class Day7
     {
+        List<Bag> listOfBags = new List<Bag>();
         public int ShinyGoldBags { get; set; }
+        public int BagsInShinyGoldBag { get; set; }
         public Day7()
         {
             string[] input = ParseDataToStringArray();
             ShinyGoldBags = NumberOfShinyBags(input);
+            BagsInShinyGoldBag = PartTwo(listOfBags);
         }
         private string[] ParseDataToStringArray()
         {
@@ -23,10 +26,8 @@ namespace Advent_of_code.Day7
 
         public int NumberOfShinyBags(string[] input)
         {
-            List<Bag> listOfBags = new List<Bag>();
             for (int i = 0; i < input.Length; i++)
-            {
-                
+            {  
                 Bag bag = new Bag();
                 string[] extractColors = input[i].Split(" ");
                 bag.BagColor = extractColors[0]+ " " +extractColors[1]+" ";
@@ -73,13 +74,9 @@ namespace Advent_of_code.Day7
                 }
             }
 
-            PartTwo(listOfBags);
-
             return containsShinyBags.Count;
 
         }
-
-        
 
         public int PartTwo(List<Bag> listOfBags)
         {

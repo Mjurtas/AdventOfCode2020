@@ -26,7 +26,12 @@ namespace Advent_of_code
             Day4.Day4 day4 = new Day4.Day4();
             Console.WriteLine("4th December Pt.1    " + day4.NumberOfValidPassportsPartOne + " passports were valid according to the initial rules.");
             Console.WriteLine("4th December Pt.2    " + day4.NumberOfValidPassportsPartTwo + " passports were valid according to the new rules in part two.");
+            Console.WriteLine("------------------------------");
             Day7.Day7 day7 = new Day7.Day7();
+            Console.WriteLine("7th December Pt.1    " + day7.ShinyGoldBags + " bags can hold goldbags.");
+            Console.WriteLine("7th December Pt.2    " + day7.BagsInShinyGoldBag + " bags can be held by a goldsack.");
+            Console.WriteLine("------------------------------");
+            Day8.Day8 day8 = new Day8.Day8();
         }
     }
 }
