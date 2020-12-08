@@ -26,6 +26,7 @@ namespace Advent_of_code.Day7
             List<Bag> listOfBags = new List<Bag>();
             for (int i = 0; i < input.Length; i++)
             {
+                
                 Bag bag = new Bag();
                 string[] extractColors = input[i].Split(" ");
                 bag.BagColor = extractColors[0]+ " " +extractColors[1]+" ";
@@ -39,14 +40,13 @@ namespace Advent_of_code.Day7
                     if (input[i].Contains(bag.BagColor) && input[i].IndexOf(bag.BagColor) != 0)
                     { 
                         string numberOf = input[i][input[i].IndexOf(bag.BagColor) - 2].ToString();
-                        listOfBags[i].CanContain.Add(new string[] { numberOf, bag.BagColor });
+                        listOfBags[i].CanContain.Add(new Bag { BagColor = bag.BagColor, TotalBags = int.Parse(numberOf)  /*numberOf, bag.BagColor*/ }); ;
                         listOfBags[i].ContainInfo += bag.BagColor;
+                        listOfBags[i].TotalBags += int.Parse(numberOf);
                     }
                 }
             }
-
             List<Bag> containsShinyBags = new List<Bag>();
-
             // Adding all the bags that carries shiny bags in to a new list.
 
             for (int i = 0; i < listOfBags.Count-1; i++)
@@ -62,7 +62,7 @@ namespace Advent_of_code.Day7
             for (int i = 0; i < containsShinyBags.Count; i++)
             {
                 List<Bag> tempList = listOfBags.FindAll(x => x.ContainInfo.Contains(containsShinyBags[i].BagColor));
-                //If the bag in the tempList dowsnt exist in the list of bags that carries shiny bags.
+                //If the bag in the tempList doesnt exist in the list of bags that carries shiny bags.
                 // We get the "parent" of every bag.
                 foreach (var tempbag in tempList)
                 {
@@ -79,32 +79,29 @@ namespace Advent_of_code.Day7
 
         }
 
-        public ulong PartTwo(List<Bag> listOfBags)
+        
+
+        public int PartTwo(List<Bag> listOfBags)
         {
+            var shinyBag = listOfBags.FindAll(x => x.BagColor == "shiny gold ");
 
-            Bag shinyBag = listOfBags.Find(x => x.BagColor == "shiny gold ");
-            List<Bag> endBags = listOfBags.FindAll(x => x.ContainInfo == " ");
+           int count = 0;
 
-            for (int i = 0; i < listOfBags.Count; i++)
+            for (int i = 0; i < shinyBag.Count; i++)
             {
-                while(listOfBags[i].ContainInfo != " ")
+                foreach (var bag in shinyBag[i].CanContain)
                 {
-                    List<Bag> bagsToCheck = 
+                    for (int j = 0; j < bag.TotalBags ; j++ )
+                    shinyBag.Add(listOfBags.Find(x => x.BagColor == bag.BagColor));
+                    
                 }
+            } 
+            foreach (var bag in shinyBag)
+            {
+                count += bag.TotalBags;
             }
 
-            ulong counter = 0;
-            for (int i = 0; i < listOfBags.Count; i++)
-            {
-                for (int j = 0; j < listOfBags[i].CanContain.Count; j++)
-                {
-                    counter += ulong.Parse(listOfBags[i].CanContain[j][0]);
-
-                }
-
-            }
-
-            return counter;
+            return count;
         }
       
     }
