@@ -36,6 +36,9 @@ namespace Advent_of_code
             Console.WriteLine("8th December Pt.2    " + day8.AccumulatorValue2 + " is the accumulated value when the loop gets to run til end.");
             Console.WriteLine("------------------------------");
             Day9.Day9 day9 = new Day9.Day9();
+            Console.WriteLine("9th December Pt.1    " + day9.PartOneAnswer + " is the malfunctioning number.");
+            Console.WriteLine("9th December Pt.2    " + day9.PartTwoAnswer + " is the sum of the two requested numbers.");
+            Console.WriteLine("------------------------------");
         }
     }
 }
