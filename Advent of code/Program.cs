@@ -32,6 +32,10 @@ namespace Advent_of_code
             Console.WriteLine("7th December Pt.2    " + day7.BagsInShinyGoldBag + " bags can be held by a goldsack.");
             Console.WriteLine("------------------------------");
             Day8.Day8 day8 = new Day8.Day8();
+            Console.WriteLine("8th December Pt.1    " + day8.AccumulatorValue + " is the accumulated value before the loop hits a already fired command.");
+            Console.WriteLine("8th December Pt.2    " + day8.AccumulatorValue2 + " is the accumulated value when the loop gets to run til end.");
+            Console.WriteLine("------------------------------");
+            Day9.Day9 day9 = new Day9.Day9();
         }
     }
 }
