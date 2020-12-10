@@ -30,7 +30,7 @@ namespace Advent_of_code.Day9
         }
         private ulong PartOne(List<ulong> input)
         {
-            int startIndex = -1;
+           int startIndex = -1;
            for (int i = 25; i < input.Count-1; i++)
             {
                 startIndex++;
@@ -41,6 +41,7 @@ namespace Advent_of_code.Day9
             }
             return 0;
         }
+
         private bool IsValidNumber(ulong valueToCheck, int indexToCheck, List<ulong> input, int startIndex)
         {
             for (int j = startIndex; j < indexToCheck; j++)
@@ -79,14 +80,7 @@ namespace Advent_of_code.Day9
                         tempSum = numbers.Sum();
                     }
                 }
-                //while(tempSum != (int)expectedSum && tempSum < (int)expectedSum && j < input.Count - 1)
-                //{
-                //    numbers.Add((int)input[j]);
-                //    tempSum = numbers.Sum();
-                //    j++;
-
-                //}
-                
+              
 
             }
             return expectedSum;

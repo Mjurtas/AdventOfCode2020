@@ -39,6 +39,10 @@ namespace Advent_of_code
             Console.WriteLine("9th December Pt.1    " + day9.PartOneAnswer + " is the malfunctioning number.");
             Console.WriteLine("9th December Pt.2    " + day9.PartTwoAnswer + " is the sum of the two requested numbers.");
             Console.WriteLine("------------------------------");
+            Day10.Day10 day10 = new Day10.Day10();
+            Console.WriteLine("9th December Pt.1    " + day9.PartOneAnswer + " is the malfunctioning number.");
+            Console.WriteLine("9th December Pt.2    " + day9.PartTwoAnswer + " is the sum of the two requested numbers.");
+            Console.WriteLine("------------------------------");
         }
     }
 }
