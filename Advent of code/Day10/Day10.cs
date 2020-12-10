@@ -7,14 +7,15 @@ namespace Advent_of_code.Day10
 {
     public class Day10
     {
-
+        public int AnswerOne { get; set; }
+        public ulong AnswerTwo { get; set; }
 
         public Day10()
         {
             var input = ParseDataToStringArray();
             
-            PartOne(input);
-            PartTwo(input);
+            AnswerOne = (int)PartOne(input);
+            AnswerTwo = PartTwo(input);
         }
 
         private List<ulong> ParseDataToStringArray()
@@ -25,7 +26,7 @@ namespace Advent_of_code.Day10
         }
         List<ulong> differences = new List<ulong>();
        public ulong counter = 0;
-        public void PartOne(List<ulong> input)
+        public int PartOne(List<ulong> input)
         {
 
             ulong joltageToCheckAgainst = (ulong)input.FindAll(x => x > 0 && x <= 3).Min();
@@ -37,71 +38,33 @@ namespace Advent_of_code.Day10
                 joltageToCheckAgainst = newAdapter;
 
             }
-            var sum = differences.FindAll(x => x == 1).Count * (differences.FindAll(x => x == 3).Count + 1);
+            return differences.FindAll(x => x == 1).Count * (differences.FindAll(x => x == 3).Count + 1);
         }
 
-        public void PartTwo(List<ulong> input)
+        public ulong PartTwo(List<ulong> input)
         {
+            //Code inspo from reddit \AdventOfCode
+
             input.Insert(0, 0);
             input.Add(input[^1] + 3);
-            Check(input);
-
-       
-            
-        }
-        HashSet<ulong> solution = new HashSet<ulong>();
-        public ulong Check(List<ulong> input)
-
-        {
-            foreach (var inta in input) {
-                Console.WriteLine(inta + "   Index: " + input.IndexOf(inta));
-            }
-                var steps = new ulong[input.Count-1]; // There are 100 adapters in total.
-                steps[0] = 1; // Theres always only 1 way of reaching the 2nd item in the list.
-                foreach (var adapter in Enumerable.Range(1, input.Count - 2))
+            var steps = new ulong[input.Count - 1]; // There are 100 adapters in total.
+            steps[0] = 1; // Theres always only 1 way of reaching the 2nd item in the list.
+            foreach (var adapter in Enumerable.Range(1, input.Count - 2)) //We want to check all items in the input, starting at index 1 (value = 1)
+            {
+                foreach (var j in Enumerable.Range(0, adapter)) //We check every index in the list. If the if-statement returns true, we know
+                    //that the adapter is within range. Therefore we can sum the ways of getting to that adapter.
                 {
-                    foreach (var j in Enumerable.Range(0, adapter))
-                    {
-                    ulong test1 = input[adapter];
-                    ulong test2 = input[j];
 
-                        if (input[adapter] - input[j] <= 3)
-                        {
-                            steps[adapter] += steps[j];
-                        }
+                    if (input[adapter] - input[j] <= 3)
+                    {
+                        steps[adapter] += steps[j];
                     }
                 }
-                return steps.Last();
-
-           
-
-            //if (index < 0) return false;
-            //{
-
-
-            //if (input.Contains(input[index] - 1))
-            //{
-            //        solution.Add(input[index] - 1);
-            //    counter++;
-            //    Check(input.IndexOf(input[index] - 1), input);
-            //}
-            //else if (input.Contains(input[index] - 2))
-            //{
-            //        solution.Add(input[index] - 2);
-            //        counter++;
-            //    Check(input.IndexOf(input[index] - 2), input);
-            //}
-            //else if (input.Contains(input[index] - 3))
-            //{
-            //        solution.Add(input[index] - 3);
-            //        counter++;
-            //    Check(input.IndexOf(input[index] - 3), input);
-            //}
-            //}
-            //return true;
-
-
+            }
+            return steps.Last();
         }
+      
+       
     }
 
 
