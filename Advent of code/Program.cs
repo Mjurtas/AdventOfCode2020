@@ -8,7 +8,7 @@ namespace Advent_of_code
         
 
         static void Main(string[] args)
-        {
+        {/*
             Day1.Day1 day1 = new Day1.Day1();
             Console.WriteLine("1th December Pt.1 = " + day1.SolutionPartOne + " is the product of the two numbers.");
             Console.WriteLine("1th December Pt.2 = " + day1.SolutionPartTwo + " is the product of the three numbers.");
@@ -43,7 +43,8 @@ namespace Advent_of_code
          
             Console.WriteLine("10th December Pt.1    " + day10.AnswerOne + " is the product of multiplying the sum of 1 and 3 differences");
             Console.WriteLine("10th December Pt.2    " + day10.AnswerTwo + " is the number of variations of setting up the adapters.");
-            Console.WriteLine("------------------------------");
+            Console.WriteLine("------------------------------");*/
+            Day11.Day11 day11 = new Day11.Day11();
         }
     }
 }
