@@ -45,6 +45,7 @@ namespace Advent_of_code
             Console.WriteLine("10th December Pt.2    " + day10.AnswerTwo + " is the number of variations of setting up the adapters.");
             Console.WriteLine("------------------------------");*/
             Day11.Day11 day11 = new Day11.Day11();
+            Day12.Day12 day12 = new Day12.Day12();
         }
     }
 }
